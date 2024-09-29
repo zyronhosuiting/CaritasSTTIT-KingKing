@@ -1,0 +1,160 @@
+[
+
+      {
+        "id": 1,
+        "name": "John",
+        "script": "Hey kingking, how was your weekend?"
+      },
+      {
+        "id": 2,
+        "name": "kingking",
+        "script": "It was great, thanks for asking! I went hiking with some friends. How about you?"
+      },
+      {
+        "id": 3,
+        "name": "John",
+        "script": "Nice! I spent most of my weekend working on a new project for school. It’s been keeping me busy."
+      },
+      {
+        "id": 4,
+        "name": "kingking",
+        "script": "That sounds interesting. What’s the project about?"
+      },
+      {
+        "id": 5,
+        "name": "John",
+        "script": "It’s a science project about renewable energy sources. We’re experimenting with solar panels and wind turbines."
+      },
+      {
+        "id": 6,
+        "name": "kingking",
+        "script": "Wow, that’s really cool! I’d love to learn more about it sometime."
+      },
+      {
+        "id": 7,
+        "name": "John",
+        "script": "Sure, I can show you our progress next time we meet up. By the way, have you tried that new restaurant downtown?"
+      },
+      {
+        "id": 8,
+        "name": "kingking",
+        "script": "Not yet, but I’ve heard good things about it. Do you want to check it out together this weekend?"
+      },
+      {
+        "id": 9,
+        "name": "John",
+        "script": "Sounds like a plan! I’ll text you to finalize the details."
+      },
+      {
+        "id": 10,
+        "name": "kingking",
+        "script": "Great, looking forward to it!"
+      },
+      {
+        "id": 11,
+        "name": "John",
+        "script": "Hi kingking, how was your day?"
+      },
+      {
+        "id": 12,
+        "name": "kingking",
+        "script": "Hey John, it was pretty good, thanks! I had a productive day at work. How about you?"
+      },
+      {
+        "id": 13,
+        "name": "John",
+        "script": "Mine was good too. I finally finished reading that book you recommended. It was amazing!"
+      },
+      {
+        "id": 14,
+        "name": "kingking",
+        "script": "I’m glad you liked it! What did you think about the ending?"
+      },
+      {
+        "id": 15,
+        "name": "John",
+        "script": "Oh, it was so unexpected! I didn’t see that plot twist coming at all. It kept me on the edge of my seat."
+      },
+      {
+        "id": 16,
+        "name": "kingking",
+        "script": "Right? That’s what I loved about it. Have you started any new books lately?"
+      },
+      {
+        "id": 17,
+        "name": "John",
+        "script": "Not yet, but I’m thinking of diving into a mystery novel next. Do you have any recommendations?"
+      },
+      {
+        "id": 18,
+        "name": "kingking",
+        "script": "Actually, I do! There’s a series by a local author that’s really gripping. I can lend you the first book if you’d like."
+      },
+      {
+        "id": 19,
+        "name": "John",
+        "script": "That would be awesome, thanks! We should also plan a movie night soon. I heard there’s a new comedy out that’s supposed to be hilarious."
+      },
+      {
+        "id": 20,
+        "name": "kingking",
+        "script": "That sounds like a lot of fun! Let’s make it happen this weekend."
+      },
+      {
+        "id": 21,
+        "name": "John",
+        "script": "Perfect! I’ll bring the popcorn."
+      },
+      {
+        "id": 22,
+        "name": "John",
+        "script": "Hi kingking, how’s it going?"
+      },
+      {
+        "id": 23,
+        "name": "kingking",
+        "script": "Hey John, I’m doing well, thanks! How about you?"
+      },
+      {
+        "id": 24,
+        "name": "John",
+        "script": "I’m good too, just finished a workout at the gym. Feeling energized!"
+      },
+      {
+        "id": 25,
+        "name": "kingking",
+        "script": "That’s great! I’ve been meaning to start working out regularly. Any tips for staying motivated?"
+      },
+      {
+        "id": 26,
+        "name": "John",
+        "script": "Definitely! Setting small, achievable goals and finding a workout buddy can make a big difference. It keeps you accountable and makes exercising more enjoyable."
+      },
+      {
+        "id": 27,
+        "name": "kingking",
+        "script": "That makes sense. I’ll give it a try. Speaking of goals, how’s your project for the art exhibition coming along?"
+      },
+      {
+        "id": 28,
+        "name": "John",
+        "script": "It’s coming together slowly but surely. I’m trying out some new techniques, so it’s been a learning process."
+      },
+      {
+        "id": 29,
+        "name": "kingking",
+        "script": "I can’t wait to see your finished pieces. You always create such inspiring artwork."
+      },
+      {
+        "id": 30,
+        "name": "John",
+        "script": "Thanks, kingking! I appreciate the support. Oh, before I forget, are you free this Saturday? I was thinking we could grab coffee and catch up."
+      },
+      {
+        "id": 31,
+        "name": "kingking",
+        "script": "Sounds like a plan! I’ll mark it on my calendar. Looking forward to it!"
+      }
+    
+  
+]
