@@ -1,6 +1,6 @@
 import React, {useState,useEffect,useRef} from 'react';
 import { ScrollView,View,Text,StyleSheet, Animated } from 'react-native';
-import randomText from '../assets/randomText/randomText.json';
+import randomText from './randomText.json';
 
 const ChatRoom= () => {
     const [messages, setMessages] = useState(randomText);

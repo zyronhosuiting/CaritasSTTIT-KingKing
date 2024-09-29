@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 import EditScreenInfo from '@/src/components/EditScreenInfo';
 import { Text, View } from '@/src/components/Themed';
-import ChatRoom from '@/feat/pages/ChatRoom';
+import ChatRoom from './ChatRoom';
 export default function TabOneScreen() {
   return (
     <View style={styles.container}>
