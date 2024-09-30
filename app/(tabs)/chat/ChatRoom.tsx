@@ -61,7 +61,7 @@ const ChatRoom = () => {
     </View>
   );
   return (
-    <View style={{ display: 'flex',alignItems:"center" }}>
+    <View style={{ display: 'flex',flex: 1,alignItems:"center" }}>
       <View style={styles.container}>
         <FlatList
           ref={flatListRef}
@@ -92,8 +92,8 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     backgroundColor: '#f5f5f5',
-    width: '50%',
-    height: 425,
+    width: '100%',
+    overflow: 'scroll',
   },
   chatMessages:
   {
@@ -110,7 +110,6 @@ const styles = StyleSheet.create({
   },
   text: {
 
-    maxWidth: "30%",
     padding: 10,
     borderRadius: 10,
     borderColor: '#000000',
