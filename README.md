@@ -46,7 +46,7 @@ If you're working on a project that uses an older version of the Expo SDK and yo
 1. **Add the latest version of Expo**:
 
    ```bash
-   yarn add expo@^49.0.0
+   yarn add expo@latest
    ```
 
 2. **Install any required dependencies and fix issues**:
