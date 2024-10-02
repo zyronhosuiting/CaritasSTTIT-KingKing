@@ -9,7 +9,7 @@ import {
 import EditScreenInfo from '@/src/components/EditScreenInfo';
 import { Text, View } from '@/src/components/Themed';
 import React from 'react';
-const image = require('../../../src/assets/images/人生就係要試一次.png');
+const image = require('../../../src/assets/images/人生就係要試一次.jpg');
 
 export function spare_TabOneScreen() {
   return (
