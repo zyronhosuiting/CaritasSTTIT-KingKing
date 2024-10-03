@@ -8,9 +8,8 @@ export default function TabOneScreen() {
   return (
     <View style={styles.container}>
       <SafeAreaProvider>
-        <ChatRoom/> 
+        <ChatRoom />
       </SafeAreaProvider>
-        
     </View>
   );
 }

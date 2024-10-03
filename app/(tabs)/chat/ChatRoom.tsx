@@ -1,4 +1,10 @@
-import React, { useState, useRef, useEffect, useMemo } from 'react';
+import React, {
+  useState,
+  useRef,
+  useEffect,
+  useMemo,
+  useCallback,
+} from 'react';
 import {
   FlatList,
   View,
@@ -22,6 +28,7 @@ const ChatRoom = () => {
   const flatListRef = useRef<FlatList<aMessage>>(null);
   const isCurrentUser = (message: aMessage) => message.name === currentUser;
   const [isAtBottom, setIsAtBottom] = useState<boolean>(true);
+
   useEffect(() => {
     // Initialize with messages from the JSON file
     const initialMessages: aMessage[] = randomText;
@@ -35,15 +42,19 @@ const ChatRoom = () => {
     }
   };
 
-  const handleRenderItem: ListRenderItem<aMessage> = ({ item }) => (
-    <View>
-      <ChatMessage isCurrentUser={isCurrentUser} item={item} />
-    </View>
+  const handleRenderItem: ListRenderItem<aMessage> = useCallback(
+    ({ item }) => (
+      <View>
+        <ChatMessage isCurrentUser={isCurrentUser} item={item} />
+      </View>
+    ),
+    [isCurrentUser],
   );
 
   useEffect(() => {
     setIsAtBottom(true); // Reset the atBottom state to false when scrolling
   }, [messages]);
+
   const handleScroll = (event: any) => {
     const { contentOffset, layoutMeasurement, contentSize } = event.nativeEvent;
     const isScrolledToBottom =
@@ -54,7 +65,7 @@ const ChatRoom = () => {
 
   const memoizedMessages = useMemo(() => messages, [messages]);
 
-  const buttonHandler = () => {
+  const buttonHandler = useCallback(() => {
     if (newMessage.trim() === '') return;
 
     const newMsg: aMessage = {
@@ -66,7 +77,7 @@ const ChatRoom = () => {
     };
     setMessages([...messages, newMsg]);
     setNewMessage('');
-  };
+  }, [newMessage]);
 
   return (
     <View
