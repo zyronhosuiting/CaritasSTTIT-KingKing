@@ -104,10 +104,13 @@ const ChatRoom = () => {
             style={styles.inputBox}
             value={newMessage}
             onChangeText={setNewMessage}
-            placeholder="Type a message..."
+            placeholder="輸入文字..."
           />
-          <TouchableOpacity style={styles.inputBox} onPress={buttonHandler}>
-            <Text>Send</Text>
+          <TouchableOpacity
+            style={[styles.inputBox, styles.sendBox]}
+            onPress={buttonHandler}
+          >
+            <Text style={{ textAlign: 'center' }}>送出</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -118,18 +121,23 @@ const ChatRoom = () => {
 const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
-    backgroundColor: '#f5f5f5',
+    backgroundColor: 'white',
     width: '100%',
     overflow: 'scroll',
   },
   inputBox: {
-    marginRight: 10,
     marginBottom: 10,
+    marginLeft: 10,
+    marginRight: 10,
     padding: 10,
+    width: '95%',
     borderColor: '#000000',
     borderWidth: 1,
     borderRadius: 10,
     backgroundColor: '#ffffff',
+  },
+  sendBox: {
+    width: '15%',
   },
 });
 

@@ -41,21 +41,22 @@ const styles = StyleSheet.create({
   text: {
     padding: 10,
     borderWidth: 1,
+    borderColor: 'transparent',
     borderRadius: 10, // This adds the rounded corners
     paddingHorizontal: 10,
     fontSize: 14,
   },
 
   kingkingText: {
-    backgroundColor: 'rgb(180, 180, 180)',
+    backgroundColor: 'orange',
   },
 
   myText: {
-    backgroundColor: 'rgb(177, 238, 255)',
+    backgroundColor: '#ffffed',
   },
   timeStamp: {
     fontSize: 10,
-    color: 'gray',
+    color: 'black',
   },
 });
 
