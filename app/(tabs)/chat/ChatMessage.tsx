@@ -1,27 +1,55 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Dimensions } from 'react-native';
 import { ChatListProps } from './interface';
 import MyAvatar from './Avatar';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const ChatMessage: React.FC<ChatListProps> = ({ isCurrentUser, item }) => {
+  const insets = useSafeAreaInsets();
+
+  // Get device width
+  const { width } = Dimensions.get('window');
+
+  // Calculate the safe area width
+  const safeAreaWidth = width - insets.left - insets.right;
   const isUserMessage = isCurrentUser(item);
   return (
     <View
       style={[
-        styles.chatMessages,
-        isUserMessage ? styles.myTextbox : styles.kingkingTextbox,
+        { width: safeAreaWidth, padding: 10 },
+        isUserMessage
+          ? { alignItems: 'flex-end' }
+          : { alignItems: 'flex-start' },
       ]}
     >
-      <Text
+      {/* MyAvatar should be aligned according to the message type */}
+      <MyAvatar alt={item.name} src={isUserMessage ? 'favicon.png' : ''} />
+
+      <View
         style={[
-          styles.text,
-          isUserMessage ? styles.myText : styles.kingkingText,
+          { maxWidth: '85%', padding: 10, flexDirection: 'row', margin: 10 }, // Ensure it follows the layout
+          isUserMessage ? styles.myTextbox : styles.kingkingTextbox,
         ]}
       >
-        {item.script}
-      </Text>
-      <Text style={styles.timeStamp}>{item.createdAt}</Text>
-      <MyAvatar alt={item.name} src={isUserMessage ? 'favicon.png' : ''} />
+        <View style={{ flex: 1 }}>
+          <Text
+            style={[
+              { color: isUserMessage ? 'black' : 'white' },
+              { flexWrap: 'wrap' },
+            ]}
+          >
+            {item.script}
+          </Text>
+          <Text
+            style={[
+              styles.timeStamp,
+              { color: isUserMessage ? 'black' : 'white', margin: 10 },
+            ]}
+          >
+            {item.createdAt}
+          </Text>
+        </View>
+      </View>
     </View>
   );
 };
@@ -29,34 +57,27 @@ const ChatMessage: React.FC<ChatListProps> = ({ isCurrentUser, item }) => {
 // Define styles for the component
 const styles = StyleSheet.create({
   chatMessages: {
-    padding: 10,
-  },
-
-  myTextbox: {
-    alignItems: 'flex-end',
-  },
-  kingkingTextbox: {
-    alignItems: 'flex-start',
-  },
-  text: {
-    padding: 10,
-    borderWidth: 1,
-    borderColor: 'transparent',
-    borderRadius: 10, // This adds the rounded corners
-    paddingHorizontal: 10,
+    alignItems: 'center',
     fontSize: 14,
   },
 
-  kingkingText: {
-    backgroundColor: 'orange',
+  myTextbox: {
+    backgroundColor: '#E8F1FF',
+    borderTopLeftRadius: 10, // Only left-top corner
+    borderBottomLeftRadius: 10, // Only left-bottom corner
+    borderTopRightRadius: 0, // No right-top corner
+    borderBottomRightRadius: 0,
   },
-
-  myText: {
-    backgroundColor: '#ffffed',
+  kingkingTextbox: {
+    backgroundColor: '#4C935E',
+    borderTopLeftRadius: 0, // Only left-top corner
+    borderBottomLeftRadius: 0, // Only left-bottom corner
+    borderTopRightRadius: 10, // No right-top corner
+    borderBottomRightRadius: 10,
   },
   timeStamp: {
-    fontSize: 10,
-    color: 'black',
+    alignItems: 'flex-end',
+    textAlign: 'right',
   },
 });
 

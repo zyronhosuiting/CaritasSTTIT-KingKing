@@ -99,7 +99,16 @@ const ChatRoom = () => {
           scrollEventThrottle={16}
           style={{ display: 'flex' }}
         />
-        <View style={{ display: 'flex', alignItems: 'flex-end' }}>
+        <View
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            borderColor: '#E8F1FF',
+            borderWidth: 3,
+            borderRadius: 25,
+            margin: 10,
+          }}
+        >
           <TextInput
             style={styles.inputBox}
             value={newMessage}
@@ -110,7 +119,7 @@ const ChatRoom = () => {
             style={[styles.inputBox, styles.sendBox]}
             onPress={buttonHandler}
           >
-            <Text style={{ textAlign: 'center' }}>送出</Text>
+            <Text style={{ color: 'white' }}>送出</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -126,18 +135,18 @@ const styles = StyleSheet.create({
     overflow: 'scroll',
   },
   inputBox: {
-    marginBottom: 10,
-    marginLeft: 10,
-    marginRight: 10,
+    margin: 10,
     padding: 10,
-    width: '95%',
-    borderColor: '#000000',
-    borderWidth: 1,
-    borderRadius: 10,
+    flex: 3,
     backgroundColor: '#ffffff',
   },
   sendBox: {
-    width: '15%',
+    flex: 1,
+    backgroundColor: '#0961F5',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 25,
+    borderColor: 'transparent',
   },
 });
 
