@@ -8,7 +8,7 @@ import {
 
 import EditScreenInfo from '@/src/components/EditScreenInfo';
 import { Text, View } from '@/src/components/Themed';
-import React from 'react';
+import React, { ReactNode } from 'react';
 const image = require('../../../src/assets/images/人生就係要試一次.jpg');
 
 export function spare_TabOneScreen() {
@@ -24,31 +24,94 @@ export function spare_TabOneScreen() {
     </View>
   );
 }
+interface MenuProps {
+  children: ReactNode;
+}
+interface AvatarProps {
+  img_name: keyof typeof IMG;
+}
+
+function HamburgerMenu({ children }: MenuProps) {
+  return (
+    <View
+      style={[
+        {
+          backgroundColor: 'aliceblue',
+          borderRadius: 20,
+          height: 100,
+          padding: 20,
+          flexDirection: 'row',
+          alignItems: 'center',
+          marginVertical: 10,
+        },
+      ]}
+    >
+      {children}
+    </View>
+  );
+}
+function getImgUrl(IMG_NAME: string) {
+  const IMG_FOLDER = '../../../src/assets/images/';
+  return IMG_FOLDER + IMG_NAME;
+}
+
+const IMG = {
+  penguin: require('../../../src/assets/images/penguin.png'),
+  temp: require('../../../src/assets/images/temp.jpg'),
+};
+
+function Avatar({ img_name }: AvatarProps) {
+  return (
+    <View
+      style={{
+        width: 50,
+        height: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
+      {/* <Text>{getImgUrl(img_name)}</Text> */}
+      <Image
+        source={IMG[img_name]}
+        style={{
+          width: '100%',
+          overflow: 'hidden',
+          resizeMode: 'contain',
+          flexGrow: 1,
+        }}
+      />
+    </View>
+  );
+}
+
 export default function HOME() {
   return (
-    <SafeAreaView style={styles.container}>
+    <View>
+      <Image
+        source={image}
+        resizeMode="cover"
+        style={[
+          styles.center,
+          {
+            height: 250,
+            width: '100%',
+            position: 'absolute',
+            // zIndex: -1,
+          },
+        ]}
+      >
+        {/* <Text style={[styles.h1]}>HOME</Text> */}
+      </Image>
+      {/* <SafeAreaView style={styles.container}> */}
       <ScrollView>
-        <ImageBackground
-          source={image}
-          resizeMode="cover"
-          style={[
-            styles.center,
-            {
-              height: 200,
-              zIndex: 1,
-            },
-          ]}
-        >
-          {/* <Text style={[styles.h1]}>HOME</Text> */}
-        </ImageBackground>
         <View
           style={[
             {
               backgroundColor: 'white',
               borderTopLeftRadius: 20,
               borderTopRightRadius: 20,
-              zIndex: 2,
-              top: -25,
+              marginTop: 220,
+              // zIndex: 2,
               // height: 200,
               paddingVertical: 20,
               paddingLeft: 20,
@@ -115,38 +178,10 @@ export default function HOME() {
           >
             <Text style={[styles.h2, { marginTop: 30 }]}>對話紀錄</Text>
           </View>
+
           <View style={[{ marginRight: 20, backgroundColor: undefined }]}>
-            <View
-              style={[
-                {
-                  backgroundColor: 'aliceblue',
-                  borderRadius: 20,
-                  height: 100,
-                  padding: 20,
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                  marginVertical: 10,
-                },
-              ]}
-            >
-              <View
-                style={{
-                  width: 50,
-                  height: 50,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <Image
-                  source={require('../../../src/assets/images/penguin.png')}
-                  style={{
-                    width: '100%',
-                    overflow: 'hidden',
-                    resizeMode: 'contain',
-                    flexGrow: 1,
-                  }}
-                ></Image>
-              </View>
+            <HamburgerMenu>
+              <Avatar img_name="penguin" />
               <View
                 style={{
                   height: '100%',
@@ -158,39 +193,9 @@ export default function HOME() {
                 <Text style={[styles.h2, {}]}>KING KING</Text>
                 <Text style={[styles.p1, {}]}>聊天文字</Text>
               </View>
-            </View>
-            <View
-              style={[
-                {
-                  backgroundColor: 'aliceblue',
-                  borderRadius: 15,
-                  height: 100,
-                  padding: 15,
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                  marginVertical: 10,
-                },
-              ]}
-            >
-              <View
-                style={{
-                  width: 50,
-                  height: 50,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  marginVertical: 5,
-                }}
-              >
-                <Image
-                  source={require('../../../src/assets/images/penguin.png')}
-                  style={{
-                    width: '100%',
-                    overflow: 'hidden',
-                    resizeMode: 'contain',
-                    flexGrow: 1,
-                  }}
-                ></Image>
-              </View>
+            </HamburgerMenu>
+            <HamburgerMenu>
+              <Avatar img_name="penguin" />
               <View
                 style={{
                   height: '100%',
@@ -202,11 +207,12 @@ export default function HOME() {
                 <Text style={[styles.h2, {}]}>KING KING</Text>
                 <Text style={[styles.p1, {}]}>聊天文字</Text>
               </View>
-            </View>
+            </HamburgerMenu>
           </View>
         </View>
       </ScrollView>
-    </SafeAreaView>
+      {/* </SafeAreaView> */}
+    </View>
   );
 }
 
