@@ -61,6 +61,7 @@ export default function TabLayout() {
         options={{
           title: 'Chat',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarStyle: { display: 'none' },
         }}
       />
     </Tabs>
